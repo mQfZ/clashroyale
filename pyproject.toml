@@ -1,0 +1,15 @@
+[project]
+name = "ClashRoyale"
+version = "0.1.0"
+dependencies = [
+  "requests",
+  "pydantic",
+]
+requires-python = ">=3.12"
+description = "A Clash Royale API Wrapper written in Python"
+readme = "README.md"
+keywords = ["Clash Royale", "API"]
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
