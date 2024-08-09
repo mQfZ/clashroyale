@@ -1,8 +1,17 @@
+from pydantic import Field
 from pydantic.dataclasses import dataclass
 
-from .BattleTeamRoundSummary import BattleTeamRoundSummary
+from .Object import Object
+from .UncountedLeveledPlayingCard import UncountedLeveledPlayingCard
+from .UncountedLeveledSupportingCard import UncountedLeveledSupportingCard
 
 
 @dataclass(kw_only=True)
-class BattleRound(BattleTeamRoundSummary):
-    pass
+class BattleRound(Object):
+    playing_cards: list[UncountedLeveledPlayingCard] = Field(alias="cards")
+    supporting_cards: list[UncountedLeveledSupportingCard] | None = Field(None, alias="supportCards")
+
+    crowns: int
+    king_tower_hit_points: int | None = None
+    princess_towers_hit_points: list[int] | None
+    elixir_leaked: float
