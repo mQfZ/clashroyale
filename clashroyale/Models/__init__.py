@@ -6,7 +6,6 @@ from .BadgedClanPlayer import BadgedClanPlayer
 from .Battle import Battle
 from .BattlePlayer import BattlePlayer
 from .BattleRound import BattleRound
-from .BattleTeamRoundSummary import BattleTeamRoundSummary
 from .CardList import CardList
 from .Challenge import Challenge
 from .ChallengeChain import ChallengeChain
@@ -72,7 +71,6 @@ __all__ = (
     "Battle",
     "BattlePlayer",
     "BattleRound",
-    "BattleTeamRoundSummary",
     "CardList",
     "Challenge",
     "ChallengeChain",
