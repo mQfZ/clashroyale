@@ -1,4 +1,4 @@
-from pydantic import HttpUrl
+from pydantic import Field, HttpUrl
 from pydantic.dataclasses import dataclass
 
 from .IDedCard import IDedCard
@@ -7,10 +7,10 @@ from .IDedCard import IDedCard
 @dataclass(kw_only=True)
 class OutlinedCard(IDedCard):
     id: int
-    name: str
-    rarity: str
+    name: str | None = None
+    rarity: str | None = None
 
     max_level: int
     max_evolution_level: int | None = None
 
-    icon_urls: dict[str, HttpUrl]
+    icon_urls: dict[str, HttpUrl] = Field(default_factory=dict)
