@@ -1,10 +1,10 @@
-from typing import Literal
+from typing import Any, Literal
 from urllib.parse import quote
 
-from pydantic import TypeAdapter
+from pydantic import TypeAdapter, ValidationError as PydanticValidationError
 from requests import Session
 
-from .Error import APIError
+from .Error import APIError, ValidationError
 from .Models import (
     Battle,
     CardList,
@@ -32,6 +32,14 @@ from .Models import (
 )
 
 
+def validate_json[T](model: type[T], url: str, content: Any) -> T:
+    try:
+        obj = TypeAdapter(model).validate_json(content)
+    except PydanticValidationError as e:
+        raise ValidationError(url, e)
+    return obj
+
+
 class ClashRoyale:
     BASE_URL = "https://api.clashroyale.com/v1"
 
@@ -42,9 +50,9 @@ class ClashRoyale:
     def _get[T](self, model: type[T], path: str, params: dict | None = None) -> T:
         response = self._session.get(self.BASE_URL + quote(path), params=params)
         if response.status_code == 200:
-            return TypeAdapter(model).validate_json(response.content)
+            return validate_json(model, response.url, response.content)
         else:
-            error = TypeAdapter(Error).validate_json(response.content)
+            error = validate_json(Error, response.url, response.content)
             raise APIError(path, error.reason, error.message)
 
     def get_clans(
