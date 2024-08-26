@@ -5,7 +5,7 @@ from .DateTime import DateTime
 from .RiverRacePlayer import RiverRacePlayer
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class RiverRaceClan(BadgedClan):
     finish_time: DateTime | None = None
     clan_score: int

@@ -4,7 +4,7 @@ from clashroyale.Models.ItemedList import ItemedList
 from clashroyale.Models.Paging import Paging
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class PaginatedList[T](ItemedList[T]):
     items: list[T]
     paging: Paging

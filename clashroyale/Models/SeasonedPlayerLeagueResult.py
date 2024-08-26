@@ -4,6 +4,6 @@ from .Season import Season
 from .SeasonlessPlayerLeagueResult import SeasonlessPlayerLeagueResult
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class SeasonedPlayerLeagueResult(Season, SeasonlessPlayerLeagueResult):
     pass

@@ -5,7 +5,7 @@ from .RiverRaceClan import RiverRaceClan
 from .RiverRacePeriodLog import RiverRacePeriodLog
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class CurrentRiverRace(Object):
     state: str
 

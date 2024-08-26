@@ -4,6 +4,6 @@ from .BadgedClan import BadgedClan
 from .NamedPlayer import NamedPlayer
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class BadgedClanPlayer(NamedPlayer):
     clan: BadgedClan | None = None

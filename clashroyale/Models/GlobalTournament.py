@@ -7,7 +7,7 @@ from .Object import Object
 from .Reward import Reward
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class GlobalTournament(Object):
     tag: str
     name: str = Field(alias="title")

@@ -5,7 +5,7 @@ from .SeasonlessPlayerLeagueResult import SeasonlessPlayerLeagueResult
 from .SeasonedPlayerLeagueResult import SeasonedPlayerLeagueResult
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class PlayerLeagueStatistics(Object):
     current_season: SeasonlessPlayerLeagueResult
     previous_season: SeasonedPlayerLeagueResult

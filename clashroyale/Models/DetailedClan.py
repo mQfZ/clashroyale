@@ -4,7 +4,7 @@ from .ClanPlayer import ClanPlayer
 from .OutlinedClan import OutlinedClan
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class DetailedClan(OutlinedClan):
     description: str
     clan_chest_status: str | None = None

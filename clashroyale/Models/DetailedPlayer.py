@@ -12,7 +12,7 @@ from .PlayerLeagueStatistics import PlayerLeagueStatistics
 from .LevellessPlayingCard import LevellessPlayingCard
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class DetailedPlayer(OutlinedPlayer):
     best_trophies: int
     journeys: dict[str, Journey] = Field(alias="progress")

@@ -7,7 +7,7 @@ from .UncountedLeveledPlayingCard import UncountedLeveledPlayingCard
 from .UncountedLeveledSupportingCard import UncountedLeveledSupportingCard
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class BattlePlayer(BadgedClanPlayer):
     starting_trophies: int | None = None
     trophy_change: int | None = None

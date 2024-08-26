@@ -6,7 +6,7 @@ from .UncountedLeveledPlayingCard import UncountedLeveledPlayingCard
 from .UncountedLeveledSupportingCard import UncountedLeveledSupportingCard
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class BattleRound(Object):
     playing_cards: list[UncountedLeveledPlayingCard] = Field(alias="cards")
     supporting_cards: list[UncountedLeveledSupportingCard] = Field(default_factory=list, alias="supportCards")

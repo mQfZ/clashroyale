@@ -4,7 +4,7 @@ from .DateTime import DateTime
 from .OutlinedPlayer import OutlinedPlayer
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class ClanPlayer(OutlinedPlayer):
     last_seen: DateTime | None = None
     clan_rank: int

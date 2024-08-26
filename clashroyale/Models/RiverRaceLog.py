@@ -5,7 +5,7 @@ from .Object import Object
 from .RiverRaceStanding import RiverRaceStanding
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class RiverRaceLog(Object):
     season_id: int
     section_index: int

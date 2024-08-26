@@ -5,7 +5,7 @@ from .DateTime import DateTime
 from .Object import Object
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class ChallengeChain(Object):
     type: str
     start_time: DateTime

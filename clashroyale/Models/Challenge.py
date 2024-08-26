@@ -6,7 +6,7 @@ from .Object import Object
 from .Reward import Reward
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class Challenge(Object):
     id: int
     name: str

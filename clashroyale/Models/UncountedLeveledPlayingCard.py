@@ -4,6 +4,6 @@ from .LevellessPlayingCard import LevellessPlayingCard
 from .UncountedCardLevel import UncountedCardLevel
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class UncountedLeveledPlayingCard(UncountedCardLevel, LevellessPlayingCard):
     pass

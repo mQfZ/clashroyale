@@ -4,7 +4,7 @@ from pydantic.dataclasses import dataclass
 from .IDedCard import IDedCard
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class OutlinedCard(IDedCard):
     id: int
     name: str | None = None

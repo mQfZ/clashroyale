@@ -4,7 +4,7 @@ from .Arena import Arena
 from .NamedPlayer import NamedPlayer
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class OutlinedPlayer(NamedPlayer):
     exp_level: int
     trophies: int

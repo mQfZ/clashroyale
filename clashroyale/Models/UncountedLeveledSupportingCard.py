@@ -4,6 +4,6 @@ from .LevellessSupportingCard import LevellessSupportingCard
 from .UncountedCardLevel import UncountedCardLevel
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class UncountedLeveledSupportingCard(UncountedCardLevel, LevellessSupportingCard):
     pass

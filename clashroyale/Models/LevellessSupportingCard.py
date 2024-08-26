@@ -3,6 +3,6 @@ from pydantic.dataclasses import dataclass
 from .OutlinedCard import OutlinedCard
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class LevellessSupportingCard(OutlinedCard):
     pass

@@ -5,7 +5,7 @@ from .IDedGameMode import IDedGameMode
 from .Object import Object
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class OutlinedTournament(Object):
     tag: str
     name: str

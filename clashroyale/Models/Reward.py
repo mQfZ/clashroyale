@@ -3,7 +3,7 @@ from pydantic.dataclasses import dataclass
 from .OutlinedCard import OutlinedCard
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class Reward:
     type: str | None
     wins: int | None = None
